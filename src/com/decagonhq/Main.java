@@ -3,7 +3,7 @@ package com.decagonhq;
 import java.util.*;
 
 public class Main {
-    private static ArrayList<Album> albums = new ArrayList<>();
+    private static List<Album> albums = new ArrayList<>();
     public static void main(String[] args) {
 	Album album = new Album("Stormbringer", "Deep purple");
 	album.addSong("StormBringer", 4.6);
@@ -29,7 +29,7 @@ public class Main {
         album.addSong("Night of the Long Knives", 4.6);
         albums.add(album);
 
-        LinkedList<Song> playList = new LinkedList<>();
+        List<Song> playList = new ArrayList<>();
         albums.get(0).addToPlaylist("you can't do it right", playList);
         albums.get(0).addToPlaylist("Holy Man", playList);
         albums.get(0).addToPlaylist("Speed King", playList);
@@ -47,7 +47,7 @@ public class Main {
 
     }
 
-    private static void play(LinkedList<Song> playList){
+    private static void play(List<Song> playList){
         Scanner scanner = new Scanner(System.in);
         boolean quit = false;
         boolean forward = true;
@@ -147,7 +147,7 @@ public class Main {
                 "6 - delete current song from playlist");
     }
 
-    private static void printList(LinkedList<Song> playList){
+    private static void printList(List<Song> playList){
         Iterator<Song> iterator = playList.iterator();
         System.out.println("==============");
         while (iterator.hasNext()){
